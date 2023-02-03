@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { assetUrl } from 'src/single-spa/asset-url';
 
 @Component({
   selector: 'nebula-login',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'nebula-login';
-
+  public backGroundUrl: string = assetUrl('images/png/background_login.png');
   constructor(private router: Router){
   }
 

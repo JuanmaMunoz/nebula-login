@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { assetUrl } from 'src/single-spa/asset-url';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
+  public logoUrl: string = assetUrl('images/svg/logo.svg');
   constructor(private router: Router,private route: ActivatedRoute){
 
   }

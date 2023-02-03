@@ -1,3 +1,9 @@
-.container{
-  margin: 1rem;
+.login-container{
+  margin-top: 13.3rem;
+  width: 39rem;
+  height: 28.5rem;
+  border-radius: 24px;
+  &__header{
+    padding-top: 3rem;
+  }
 }
