@@ -1,0 +1,16 @@
+<div>
+  <label class="form-label">{{ label }}</label>
+  <input
+    [type]="type"
+    [formControl]="control"
+    [ngClass]="{
+      'is-invalid': control.errors && control.dirty,
+      'is-valid': control.valid
+    }"
+    class="form-control"
+    placeholder="Insert FirstName"
+  />
+  <div class="invalid-feedback">
+    {{ control.errors | validationErrors : validatorsErrors }}
+  </div>
+</div>

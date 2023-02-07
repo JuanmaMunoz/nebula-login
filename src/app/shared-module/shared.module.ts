@@ -1,30 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { assetUrl } from 'src/single-spa/asset-url';
-import { SharedModule } from '../shared-module/shared.module';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidationErrors } from './pipes/validation-errors.pipe';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
-const routes = [
-  {
-    path: '',
-    component: LoginComponent,
-  },
-];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [HeaderComponent, InputTextComponent, ValidationErrors],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
-    SharedModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -32,8 +26,7 @@ const routes = [
         deps: [HttpClient],
       },
     }),
-    RouterModule.forChild(routes),
   ],
-  exports: [RouterModule],
+  exports: [HeaderComponent],
 })
-export class LoginModule {}
+export class SharedModule {}
