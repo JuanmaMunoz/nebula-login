@@ -1,16 +1,19 @@
 <div>
-  <label class="form-label">{{ label }}</label>
+  <label class="form-label text-secondary"
+    ><strong>{{ label | translate }}</strong
+    >:</label
+  >
   <input
-    [type]="type"
+    type="text"
     [formControl]="control"
     [ngClass]="{
       'is-invalid': control.errors && control.dirty,
       'is-valid': control.valid
     }"
     class="form-control"
-    placeholder="Insert FirstName"
+    placeholder="{{ label | translate }}"
   />
   <div class="invalid-feedback">
-    {{ control.errors | validationErrors : validatorsErrors }}
+    {{ control.errors | validationErrors : validatorsErrors | translate }}
   </div>
 </div>

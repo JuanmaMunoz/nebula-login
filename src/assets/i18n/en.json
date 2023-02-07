@@ -1,6 +1,18 @@
 {
   "login":{
     "title": "Secure and effective Digital Identity",
-    "description": "To access the services provided by nebulaSUITE, you must log in with your username and password."
+    "description": "To access the services provided by nebulaSUITE, you must log in with your username and password.",
+    "email": "Your email",
+    "password": "Your password",
+    "continue": "Continue"
+  },
+  "validations":{
+    "email":{
+      "required": "The email is required",
+      "invalid": "The email is invalid"
+    },
+    "password":{
+      "required": "The password is required"
+    }
   }
 }

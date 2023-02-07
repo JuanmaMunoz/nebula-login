@@ -9,7 +9,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InputTextComponent implements OnInit {
   @Input() control: FormControl = new FormControl();
   @Input() label: string = '';
-  @Input() type: string = '';
   @Input() validatorsErrors: any;
   constructor() {}
 

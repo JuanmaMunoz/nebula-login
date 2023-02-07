@@ -1,0 +1,6 @@
+<form [formGroup]="formUser" (ngSubmit)="continue()">
+  <app-input-text [label]="label" [validatorsErrors]="validatorsErrors.email" [control]="email"></app-input-text>
+  <button type="submit" [disabled]="!formUser.valid" class="btn btn-primary mt-3 float-end">
+    {{ 'login.continue' | translate }} <i class="bi bi-save"></i>
+  </button>
+</form>

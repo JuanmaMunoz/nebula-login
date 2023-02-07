@@ -1,3 +1,9 @@
-<div class="login-container bg-light">
-  <app-header [title]="title" [description]="description" [logoUrl]="logoUrl"></app-header>
+<div class="login bg-light">
+  <div class="login__header">
+    <app-header [title]="title" [description]="description" [logoUrl]="logoUrl"></app-header>
+  </div>
+  <div class="login__body">
+    <app-form-user></app-form-user>
+  </div>
+  <div class="login__footer"></div>
 </div>

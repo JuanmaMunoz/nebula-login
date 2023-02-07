@@ -1,0 +1,6 @@
+<form [formGroup]="formPass" (ngSubmit)="continue()">
+  <app-input-text [label]="label" [validatorsErrors]="validatorsErrors.password" [control]="password"></app-input-text>
+  <button type="submit" [disabled]="!formPass.valid" class="btn btn-primary mt-3 float-end">
+    {{ 'login.continue' | translate }} <i class="bi bi-save"></i>
+  </button>
+</form>

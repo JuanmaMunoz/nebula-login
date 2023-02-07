@@ -27,6 +27,6 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, InputTextComponent],
 })
 export class SharedModule {}

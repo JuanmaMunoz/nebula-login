@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { assetUrl } from 'src/single-spa/asset-url';
 import { SharedModule } from '../shared-module/shared.module';
+import { FormUserComponent } from './components/form-user/form-user.component';
+import { FormPassComponent } from './components/form-pass/form-pass.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
@@ -20,7 +22,7 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, FormUserComponent, FormPassComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
