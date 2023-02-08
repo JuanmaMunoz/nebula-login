@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/validations/validations';
 
@@ -7,13 +7,23 @@ import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/validations
   templateUrl: './form-user.component.html',
   styleUrls: ['./form-user.component.scss'],
 })
-export class FormUserComponent {
+export class FormUserComponent implements OnInit {
+  @Input() email: string = '';
+  @Output() sendEmail: EventEmitter<string> = new EventEmitter();
   public validatorsErrors = VALIDATORS_ERRORS;
   public label = 'login.email';
-  public formUser: FormGroup = new FormGroup({
-    email: new FormControl('', VALIDATORS.email),
-  });
-  public email = this.formUser.get('email') as FormControl;
+  public formUser: FormGroup = {} as FormGroup;
+  public emailControl: FormControl = {} as FormControl;
 
-  public continue(): void {}
+  ngOnInit(): void {
+    this.formUser = new FormGroup({
+      email: new FormControl(this.email, VALIDATORS.email),
+    });
+    this.emailControl = this.formUser.get('email') as FormControl;
+  }
+
+  public continue(): void {
+    this.email = this.emailControl.value;
+    this.sendEmail.emit(this.email);
+  }
 }

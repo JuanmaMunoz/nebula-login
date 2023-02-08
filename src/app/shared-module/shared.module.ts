@@ -8,13 +8,14 @@ import { assetUrl } from 'src/single-spa/asset-url';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValidationErrors } from './pipes/validation-errors.pipe';
+import { PassTextComponent } from './components/pass-text/pass-text.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
 
 @NgModule({
-  declarations: [HeaderComponent, InputTextComponent, ValidationErrors],
+  declarations: [HeaderComponent, InputTextComponent, ValidationErrors, PassTextComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -27,6 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
   ],
-  exports: [HeaderComponent, InputTextComponent],
+  exports: [HeaderComponent, InputTextComponent, PassTextComponent],
 })
 export class SharedModule {}

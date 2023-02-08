@@ -11,12 +11,28 @@ export class LoginComponent implements OnInit {
   public logoUrl: string = assetUrl('images/svg/logo.svg');
   public title: string = 'login.title';
   public description: string = 'login.description';
+  public phase: string = 'email';
+  public email: string = '';
+  private password: string = '';
   constructor(private router: Router) {}
   public ngOnInit(): void {
-    this.checkSession();
+    //this.checkSession();
   }
 
-  public login(): void {
+  public getEmail(email: string) {
+    this.email = email;
+    this.changePhase('password');
+  }
+
+  public getPassword(password: string) {
+    this.password = password;
+    console.log(this.password);
+  }
+
+  public changePhase(phase: string) {
+    this.phase = phase;
+  }
+  /*public login(): void {
     console.log('login....');
     this.createSession();
   }
@@ -38,4 +54,5 @@ export class LoginComponent implements OnInit {
   public recovery() {
     this.router.navigate(['/login/recovery']);
   }
+  */
 }

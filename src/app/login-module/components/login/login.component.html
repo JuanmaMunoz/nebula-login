@@ -3,7 +3,8 @@
     <app-header [title]="title" [description]="description" [logoUrl]="logoUrl"></app-header>
   </div>
   <div class="login__body">
-    <app-form-user></app-form-user>
+    <app-form-user *ngIf="phase === 'email'" [email]="email" (sendEmail)="getEmail($event)"></app-form-user>
+    <app-form-pass *ngIf="phase === 'password'" (back)="changePhase($event)" (sendPassword)="getPassword($event)"></app-form-pass>
   </div>
   <div class="login__footer"></div>
 </div>

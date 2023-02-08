@@ -4,7 +4,8 @@
     "description": "To access the services provided by nebulaSUITE, you must log in with your username and password.",
     "email": "Your email",
     "password": "Your password",
-    "continue": "Continue"
+    "continue": "Continue",
+    "back": "Back"
   },
   "validations":{
     "email":{

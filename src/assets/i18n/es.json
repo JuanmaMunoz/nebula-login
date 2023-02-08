@@ -4,7 +4,8 @@
     "description": "Para acceder a los servicios prestados por nebulaSUITE, debe iniciar sesión con su usuario y contraseña.",
     "email": "Tu email",
     "password": "Tu contraseña",
-    "continue": "Continuar"
+    "continue": "Continuar",
+    "back": "Volver"
   },
   "validations":{
     "email":{
