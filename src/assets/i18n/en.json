@@ -5,7 +5,15 @@
     "email": "Your email",
     "password": "Your password",
     "continue": "Continue",
-    "back": "Back"
+    "back": "Back",
+    "forgotPassword":"Forgot your password?",
+    "clickNewPassword":"Click here to create a new one",
+    "troubleLogin": "Trouble login in?",
+    "accessHelp":"Access our help",
+    "footer": {
+      "firstLine": "nebulaSUITE is a <span class='text-primary'>Vintegris</span> solution.",
+      "secondLine": "See our <span class='text-primary'>Privacy Policy</span> and <span class='text-primary'>Terms of Service</span>"
+    }
   },
   "validations":{
     "email":{

@@ -1,9 +1,16 @@
-<form [formGroup]="formPass" (ngSubmit)="continue()">
-  <app-pass-text [label]="label" [validatorsErrors]="validatorsErrors.password" [control]="passwordControl" [focus]="true"></app-pass-text>
-  <button (click)="goBack()" class="btn btn-sm btn-secondary mt-3 float-start">
-    <i class="bi bi-chevron-left"></i> {{ 'login.back' | translate }}
-  </button>
-  <button type="submit" [disabled]="!formPass.valid" class="btn btn-lg btn-primary mt-3 float-end">
-    {{ 'login.continue' | translate }}
-  </button>
-</form>
+<div class="form-pass row">
+  <form [formGroup]="formPass" (ngSubmit)="continue()">
+    <app-pass-text
+      [label]="label"
+      [validatorsErrors]="validatorsErrors.password"
+      [control]="passwordControl"
+      [focus]="true"
+    ></app-pass-text>
+    <button (click)="goBack()" class="btn btn-sm btn-secondary mt-3 float-start">
+      <i class="bi bi-chevron-left"></i> {{ 'login.back' | translate }}
+    </button>
+    <button type="submit" [disabled]="!formPass.valid" class="btn btn-lg btn-primary mt-3 float-end">
+      {{ 'login.continue' | translate }}
+    </button>
+  </form>
+</div>

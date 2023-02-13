@@ -5,7 +5,15 @@
     "email": "Tu email",
     "password": "Tu contraseña",
     "continue": "Continuar",
-    "back": "Volver"
+    "back": "Volver",
+    "forgotPassword":"¿Olvidaste tu contraseña?",
+    "clickNewPassword":"Haz click aquí para generar una nueva",
+    "troubleLogin": "¿Problemas al iniciar sesión?",
+    "accessHelp":"Accede a nuestra ayuda",
+    "footer": {
+      "firstLine": "nebulaSUITE es una aplicación de <span class='text-primary'>Vintegris</span>",
+      "secondLine": "Mira nuestra <span class='text-primary'>Política de Privacidad</span> y <span class='text-primary'>Términos de Servicio</span>"
+    }
   },
   "validations":{
     "email":{

@@ -2,9 +2,14 @@
   <div class="login__header">
     <app-header [title]="title" [description]="description" [logoUrl]="logoUrl"></app-header>
   </div>
-  <div class="login__body">
+  <div class="login__body mt-1">
     <app-form-user *ngIf="phase === 'email'" [email]="email" (sendEmail)="getEmail($event)"></app-form-user>
     <app-form-pass *ngIf="phase === 'password'" (back)="changePhase($event)" (sendPassword)="getPassword($event)"></app-form-pass>
   </div>
-  <div class="login__footer"></div>
+  <div class="login_trouble mt-3">
+    <app-trouble-login [phase]="phase"></app-trouble-login>
+  </div>
+  <div class="login__footer mt-1">
+    <app-footer></app-footer>
+  </div>
 </div>
