@@ -1,0 +1,14 @@
+<div class="select-language">
+  <div class="dropdown">
+    <a (click)="showHide()" class="text-light btn-language"
+      >{{ languageService.languageSelected | translate }} <i class="bi bi-chevron-down"></i
+    ></a>
+    <ul class="dropdown-menu" [class.show]="show" [@showHideStatus]="show">
+      <li *ngFor="let language of languageService.languageList">
+        <a *ngIf="language !== languageService.languageSelected" class="dropdown-item" (click)="changeLanguage(language)">{{
+          language | translate
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

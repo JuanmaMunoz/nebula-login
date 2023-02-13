@@ -23,5 +23,7 @@
     "password":{
       "required": "The password is required"
     }
-  }
+  },
+  "en": "English",
+  "es": "Spanish"
 }

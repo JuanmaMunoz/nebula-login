@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/validations/validations';
+import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
 
 @Component({
   selector: 'app-form-pass',

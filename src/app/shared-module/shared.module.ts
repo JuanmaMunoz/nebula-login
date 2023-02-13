@@ -7,15 +7,17 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { assetUrl } from 'src/single-spa/asset-url';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ValidationErrors } from './pipes/validation-errors.pipe';
+import { ValidationErrors } from './utils/pipes/validation-errors.pipe';
 import { PassTextComponent } from './components/pass-text/pass-text.component';
+import { SelectLanguageComponent } from './components/select-language/select-language.component';
+import { LanguageService } from './services/language.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
 
 @NgModule({
-  declarations: [HeaderComponent, InputTextComponent, ValidationErrors, PassTextComponent],
+  declarations: [HeaderComponent, InputTextComponent, ValidationErrors, PassTextComponent, SelectLanguageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,6 +30,7 @@ export function createTranslateLoader(http: HttpClient) {
       },
     }),
   ],
-  exports: [HeaderComponent, InputTextComponent, PassTextComponent],
+  providers: [LanguageService],
+  exports: [HeaderComponent, InputTextComponent, PassTextComponent, SelectLanguageComponent],
 })
 export class SharedModule {}

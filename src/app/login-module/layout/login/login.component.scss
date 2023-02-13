@@ -3,16 +3,20 @@
   width: 39rem;
   height: 28.5rem;
   border-radius: 24px;
+  &__language {
+    position: relative;
+    margin: -2rem 1rem 0 0;
+  }
   &__header {
-    padding: 3rem 6rem 0rem 6rem;
+    padding: 3rem 6rem 0 6rem;
   }
   &__body {
-    padding: 0rem 10rem 0rem 10rem;
+    padding: 0 10rem 0 10rem;
   }
   &__login-trouble {
-    padding: 0rem 10rem 0rem 10rem;
+    padding: 0 10rem 0 10rem;
   }
   &__footer {
-    padding: 0rem 10rem 0rem 10rem;
+    padding: 0 10rem 0 10rem;
   }
 }
