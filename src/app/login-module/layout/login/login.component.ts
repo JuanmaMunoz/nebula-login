@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public password: string = '';
   private subscription = new Subscription();
   public errorLogin: Subject<any> = new Subject();
+  public loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private router: Router, private loginService: LoginService) {}
 
@@ -43,15 +45,23 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   private login(): void {
+    this.loading.next(true);
     this.subscription.add(
       this.loginService.login(this.email, this.password).subscribe({
-        next: (token: IToken) => {
-          console.log(token);
+        next: (session: IToken) => {
+          this.loading.next(false);
+          this.setToken(session.token);
         },
-        error: (e) => {
+        error: (e: HttpErrorResponse) => {
+          this.loading.next(false);
           this.errorLogin.next({ invalidCredentials: 'login.invalidCredentials' });
         },
       })
     );
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem('nebulaToken', token);
+    this.router.navigate(['/users']);
   }
 }

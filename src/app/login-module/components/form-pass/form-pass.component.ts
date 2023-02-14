@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
 
 @Component({
@@ -13,10 +13,12 @@ export class FormPassComponent implements OnInit, OnDestroy {
   @Output() back: EventEmitter<string> = new EventEmitter();
   @Input() password: string = '';
   @Input() errorLogin: Subject<any> = new Subject();
+  @Input() loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public validatorsErrors = VALIDATORS_ERRORS;
   public label = 'login.password';
   public formPass: FormGroup = {} as FormGroup;
   public passwordControl: FormControl = {} as FormControl;
+
   public subscription = new Subscription();
 
   ngOnInit(): void {

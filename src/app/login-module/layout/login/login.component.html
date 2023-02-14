@@ -11,6 +11,7 @@
       *ngIf="phase === 'password'"
       [password]="password"
       [errorLogin]="errorLogin"
+      [loading]="loading"
       (back)="changePhase($event)"
       (sendPassword)="getPassword($event)"
     ></app-form-pass>

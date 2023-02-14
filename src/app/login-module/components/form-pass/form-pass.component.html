@@ -9,8 +9,9 @@
     <button (click)="goBack()" class="btn btn-sm btn-secondary mt-3 float-start">
       <i class="bi bi-chevron-left"></i> {{ 'login.back' | translate }}
     </button>
-    <button type="submit" [disabled]="!formPass.valid" class="btn btn-lg btn-primary mt-3 float-end">
+    <button type="submit" [disabled]="!formPass.valid || loading.getValue()" class="btn btn-lg btn-primary mt-3 float-end">
       {{ 'login.continue' | translate }}
+      <span *ngIf="loading.getValue()" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     </button>
   </form>
 </div>
