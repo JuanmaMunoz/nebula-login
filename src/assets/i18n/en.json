@@ -22,7 +22,8 @@
     },
     "password":{
       "required": "The password is required"
-    }
+    },
+    "invalidCredentials":"User or password invalid"
   },
   "en": "English",
   "es": "Spanish"

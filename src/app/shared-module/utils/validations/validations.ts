@@ -12,5 +12,6 @@ export const VALIDATORS_ERRORS = {
   },
   password: {
     required: 'validations.password.required',
+    invalidCredentials: 'validations.invalidCredentials',
   },
 };

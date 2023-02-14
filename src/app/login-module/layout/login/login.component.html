@@ -7,7 +7,13 @@
   </div>
   <div class="login__body mt-1">
     <app-form-user *ngIf="phase === 'email'" [email]="email" (sendEmail)="getEmail($event)"></app-form-user>
-    <app-form-pass *ngIf="phase === 'password'" (back)="changePhase($event)" (sendPassword)="getPassword($event)"></app-form-pass>
+    <app-form-pass
+      *ngIf="phase === 'password'"
+      [password]="password"
+      [errorLogin]="errorLogin"
+      (back)="changePhase($event)"
+      (sendPassword)="getPassword($event)"
+    ></app-form-pass>
   </div>
   <div class="login_trouble mt-3">
     <app-trouble-login [phase]="phase"></app-trouble-login>

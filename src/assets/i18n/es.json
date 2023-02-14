@@ -22,7 +22,8 @@
     },
     "password":{
       "required": "El contraseña es requerida"
-    }
+    },
+    "invalidCredentials":"Usuario o contraseña inválido"
   },
   "en": "Inglés",
   "es": "Español"
