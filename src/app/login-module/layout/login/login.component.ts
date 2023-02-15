@@ -2,8 +2,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
+import { ISession } from 'src/app/shared-module/models/interfaces';
+import { SessionService } from 'src/app/shared-module/services/session.service';
 import { assetUrl } from 'src/single-spa/asset-url';
-import { IToken } from '../../models/interfaces';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   public errorLogin: Subject<any> = new Subject();
   public loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(private router: Router, private loginService: LoginService, private sessionService: SessionService) {}
 
   public ngOnInit(): void {}
 
@@ -48,9 +49,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loading.next(true);
     this.subscription.add(
       this.loginService.login(this.email, this.password).subscribe({
-        next: (session: IToken) => {
+        next: (session: ISession) => {
           this.loading.next(false);
-          this.setToken(session.token);
+          this.createSession(session);
         },
         error: (e: HttpErrorResponse) => {
           this.loading.next(false);
@@ -60,8 +61,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     );
   }
 
-  setToken(token: string): void {
-    localStorage.setItem('nebulaToken', token);
+  createSession(session: ISession): void {
+    this.sessionService.createSession(session);
     this.router.navigate(['/users']);
   }
 }
