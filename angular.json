@@ -38,7 +38,7 @@
               "libraryName": "nebula-login",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:4201/"
+            "deployUrl": "https://devel.nebulaservice.net/login/"
           },
           "configurations": {
             "production": {
