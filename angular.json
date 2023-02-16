@@ -37,8 +37,7 @@
               "path": "extra-webpack.config.js",
               "libraryName": "nebula-login",
               "libraryTarget": "umd"
-            },
-            "deployUrl": "https://devel.nebulaservice.net/login/"
+            }
           },
           "configurations": {
             "production": {
@@ -54,9 +53,11 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "none"
+              "outputHashing": "none",
+              "deployUrl": "https://devel.nebulaservice.net/login/"
             },
             "development": {
+              "deployUrl": "http://localhost:4201/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
