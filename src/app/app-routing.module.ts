@@ -1,14 +1,13 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmptyRouteComponent } from './empty-route/empty-route.component';
-import { LoginComponent } from './login-module/layout/login/login.component';
-import { LoginGuard } from './login-module/utils/guards/login.guards';
+import { EmptyRouteComponent } from './shared-module/components/empty-route/empty-route.component';
+import { AuthGuard } from './login-module/utils/guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
-    canLoad: [LoginGuard],
+    path: 'login/auth',
+    canLoad: [AuthGuard],
     loadChildren: () => import('./login-module/login.module').then((m) => m.LoginModule),
   },
   {
@@ -17,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: LoginComponent,
+    component: EmptyRouteComponent,
   },
 ];
 
