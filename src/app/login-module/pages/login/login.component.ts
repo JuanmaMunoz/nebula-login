@@ -62,7 +62,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   createSession(session: ISession): void {
+    console.log('create session');
     this.sessionService.createSession(session);
-    this.router.navigate(['/users']);
+    this.router.navigate(['/users/info']);
   }
 }

@@ -11,13 +11,14 @@ import { ValidationErrors } from './utils/pipes/validation-errors.pipe';
 import { PassTextComponent } from './components/pass-text/pass-text.component';
 import { SelectLanguageComponent } from './components/select-language/select-language.component';
 import { LanguageService } from './services/language.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
 }
 
 @NgModule({
-  declarations: [HeaderComponent, InputTextComponent, ValidationErrors, PassTextComponent, SelectLanguageComponent],
+  declarations: [HeaderComponent, InputTextComponent, ValidationErrors, PassTextComponent, SelectLanguageComponent, NotFoundComponent],
   imports: [
     CommonModule,
     FormsModule,

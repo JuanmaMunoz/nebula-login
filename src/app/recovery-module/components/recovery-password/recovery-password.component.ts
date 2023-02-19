@@ -4,27 +4,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-recovery-password',
   templateUrl: './recovery-password.component.html',
-  styleUrls: ['./recovery-password.component.scss']
+  styleUrls: ['./recovery-password.component.scss'],
 })
-export class RecoveryPasswordComponent implements OnInit{
-  constructor(private router: Router,private route: ActivatedRoute){
-  }
+export class RecoveryPasswordComponent implements OnInit {
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  public ngOnInit(): void {
-  }
+  public ngOnInit(): void {}
 
-  public recovery(): void{
+  public recovery(): void {
     console.log('Recovery....');
   }
 
-
-  public redirect(){
-    this.router.navigate(['/users']);
+  public redirect() {
+    this.router.navigate(['/cert']);
   }
 
-  public goLogin(){
+  public goLogin() {
     this.router.navigate(['/login']);
   }
-
-
 }

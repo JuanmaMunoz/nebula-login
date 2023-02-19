@@ -11,7 +11,7 @@ export class AuthGuard implements CanLoad {
   canLoad(): Observable<boolean> {
     return this.sessionService.stayLogin().pipe(
       tap((stay: boolean) => {
-        if (!stay) this.router.navigate(['/users']);
+        if (!stay) this.router.navigate(['/users/info']);
       })
     );
   }
