@@ -15,11 +15,11 @@ export class RecoveryPasswordComponent implements OnInit {
     console.log('Recovery....');
   }
 
-  public redirect() {
-    this.router.navigate(['/cert']);
+  public redirect(url: string) {
+    this.router.navigate([url]);
   }
 
   public goLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login/auth']);
   }
 }
