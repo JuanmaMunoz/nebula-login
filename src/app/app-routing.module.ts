@@ -2,7 +2,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './login-module/utils/guards/auth.guard';
-import { NotFoundComponent } from './shared-module/components/not-found/not-found.component';
+import { NotFoundComponent } from './shared-module/pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -18,10 +18,6 @@ const routes: Routes = [
     path: '**',
     component: NotFoundComponent,
   },
-  /*{
-    path: '**',
-    redirectTo: 'login/auth', //Not run whern redirect other micro-front
-  },*/
 ];
 
 @NgModule({
