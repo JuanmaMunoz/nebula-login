@@ -1,9 +1,9 @@
-<div class="trouble-login">
-  <p *ngIf="phase === 'password'" class="text-center">
+<div class="trouble-login text-center">
+  <p *ngIf="phase === 'password'">
     {{ 'login.forgotPassword' | translate }}
     <a class="text-primary" [routerLink]="">{{ 'login.clickNewPassword' | translate }}</a>
   </p>
-  <p class="text-center">
+  <p>
     {{ 'login.troubleLogin' | translate }} <a class="text-primary" [routerLink]="">{{ 'login.accessHelp' | translate }}</a>
   </p>
 </div>

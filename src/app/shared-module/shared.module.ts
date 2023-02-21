@@ -12,6 +12,7 @@ import { PassTextComponent } from './components/pass-text/pass-text.component';
 import { SelectLanguageComponent } from './components/select-language/select-language.component';
 import { LanguageService } from './services/language.service';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
@@ -22,6 +23,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
