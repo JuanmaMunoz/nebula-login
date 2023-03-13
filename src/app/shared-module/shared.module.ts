@@ -13,6 +13,7 @@ import { SelectLanguageComponent } from './components/select-language/select-lan
 import { LanguageService } from './services/language.service';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { LibModule } from 'lib';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
@@ -25,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
+    LibModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

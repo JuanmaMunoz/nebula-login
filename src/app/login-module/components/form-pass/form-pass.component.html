@@ -1,11 +1,12 @@
 <div class="form-pass row">
   <form [formGroup]="formPass" (ngSubmit)="continue()">
-    <app-pass-text
-      [label]="label"
-      [validatorsErrors]="validatorsErrors.password"
+    <label class="mb-2" [ngClass]="[label.color, label.fontWeight]">{{ label.text | translate }}</label>
+    <lib-input-password
+      [validationErrors]="validationsErrors.password"
+      [placeholder]="label.text"
       [control]="passwordControl"
       [focus]="true"
-    ></app-pass-text>
+    ></lib-input-password>
     <button (click)="goBack()" class="btn btn-sm btn-secondary mt-3 float-start">
       <i class="bi bi-chevron-left"></i> {{ 'login.back' | translate }}
     </button>
@@ -15,3 +16,4 @@
     </button>
   </form>
 </div>
+<script></script>

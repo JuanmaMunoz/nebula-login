@@ -1,6 +1,12 @@
 <div class="form-user row">
   <form [formGroup]="formUser" (ngSubmit)="continue()">
-    <app-input-text [label]="label" [validatorsErrors]="validatorsErrors.email" [control]="emailControl" [focus]="true"></app-input-text>
+    <label class="mb-2" [ngClass]="[label.color, label.fontWeight]">{{ label.text | translate }}</label>
+    <lib-input-text
+      [validationErrors]="validationsErrors.email"
+      [placeholder]="label.text"
+      [control]="emailControl"
+      [focus]="true"
+    ></lib-input-text>
     <button type="submit" [disabled]="!formUser.valid" class="btn btn-lg btn-primary mt-3 float-end">
       {{ 'login.continue' | translate }}
     </button>

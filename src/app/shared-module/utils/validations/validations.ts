@@ -1,11 +1,11 @@
 import { Validators } from '@angular/forms';
 
-export const VALIDATORS = {
+export const VALIDATIONS = {
   password: [Validators.required],
   email: [Validators.required, Validators.email],
 };
 
-export const VALIDATORS_ERRORS = {
+export const VALIDATIONS_ERRORS = {
   email: {
     required: 'validations.email.required',
     email: 'validations.email.invalid',

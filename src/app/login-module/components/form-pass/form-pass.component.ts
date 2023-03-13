@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FontWeight, ILabel, TextColor, TypeColor } from 'lib';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
-import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
+import { VALIDATIONS, VALIDATIONS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
 
 @Component({
   selector: 'app-form-pass',
@@ -14,8 +15,12 @@ export class FormPassComponent implements OnInit, OnDestroy {
   @Input() password: string = '';
   @Input() errorLogin: Subject<any> = new Subject();
   @Input() loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  public validatorsErrors = VALIDATORS_ERRORS;
-  public label = 'login.password';
+  public validationsErrors = VALIDATIONS_ERRORS;
+  public label: ILabel = {
+    text: 'login.password',
+    color: TextColor.Secondary,
+    fontWeight: FontWeight.Bold,
+  };
   public formPass: FormGroup = {} as FormGroup;
   public passwordControl: FormControl = {} as FormControl;
 
@@ -31,7 +36,7 @@ export class FormPassComponent implements OnInit, OnDestroy {
       })
     );
     this.formPass = new FormGroup({
-      password: new FormControl(this.password, VALIDATORS.password),
+      password: new FormControl(this.password, VALIDATIONS.password),
     });
     this.passwordControl = this.formPass.get('password') as FormControl;
   }

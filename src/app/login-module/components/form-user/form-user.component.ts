@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
+import { FontWeight, ILabel, TextColor } from 'lib';
+import { VALIDATIONS, VALIDATIONS_ERRORS } from 'src/app/shared-module/utils/validations/validations';
 
 @Component({
   selector: 'app-form-user',
@@ -10,14 +11,18 @@ import { VALIDATORS, VALIDATORS_ERRORS } from 'src/app/shared-module/utils/valid
 export class FormUserComponent implements OnInit {
   @Input() email: string = '';
   @Output() sendEmail: EventEmitter<string> = new EventEmitter();
-  public validatorsErrors = VALIDATORS_ERRORS;
-  public label = 'login.email';
+  public validationsErrors = VALIDATIONS_ERRORS;
+  public label: ILabel = {
+    text: 'login.email',
+    color: TextColor.Secondary,
+    fontWeight: FontWeight.Bold,
+  };
   public formUser: FormGroup = {} as FormGroup;
   public emailControl: FormControl = {} as FormControl;
 
   ngOnInit(): void {
     this.formUser = new FormGroup({
-      email: new FormControl(this.email, VALIDATORS.email),
+      email: new FormControl(this.email, VALIDATIONS.email),
     });
     this.emailControl = this.formUser.get('email') as FormControl;
   }

@@ -12,7 +12,7 @@ import { FormUserComponent } from './components/form-user/form-user.component';
 import { FormPassComponent } from './components/form-pass/form-pass.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TroubleLoginComponent } from './components/trouble-login/trouble-login.component';
-import { LoginService } from './services/login.service';
+import { LibModule } from 'lib';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, `${assetUrl('i18n/')}`, '.json');
@@ -30,6 +30,7 @@ const routes = [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
+    LibModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
